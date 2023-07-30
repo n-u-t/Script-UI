@@ -1,4 +1,25 @@
+local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
 
+    local input = game:GetService("UserInputService")
+    local run = game:GetService("RunService")
+    local tween = game:GetService("TweenService")
+    local tweeninfo = TweenInfo.new
+
+    local utility = {}
+
+    local objects = {}
+    local themes = {
+    Background = Color3.fromRGB(24, 24, 24),
+    Glow = Color3.fromRGB(0, 0, 0),
+    Accent = Color3.fromRGB(10, 10, 10),
+    LightContrast = Color3.fromRGB(20, 20, 20),
+    DarkContrast = Color3.fromRGB(14, 14, 14),
+    TextColor = Color3.fromRGB(255, 255, 255)
+    }
+
+    do
+    function utility:Create(instance, properties, children)
         local object = Instance.new(instance)
 
         for i, v in pairs(properties or {}) do
